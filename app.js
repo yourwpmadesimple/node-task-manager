@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
-const routes = require("./routes/tasks");
+const tasks = require("./routes/tasks");
+
+// Middleware
+app.use(express.json());
 
 // routes
 app.get("/", (req, res) => {
@@ -11,7 +14,7 @@ app.get("/hello", (req, res) => {
 });
 
 // API endpoints
-//app.use("/api/v1/tasks");
+app.use("/api/v1/tasks", tasks);
 
 const port = process.env.port || 3030;
 
