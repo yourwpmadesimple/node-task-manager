@@ -2,7 +2,10 @@ const express = require("express");
 const app = express();
 
 // routes
-app.get("/", (req, res) => {
+// app.get("/", (req, res) => {
+//     res.send("Task manager App");
+//   });
+app.get("/hello", (req, res) => {
   res.send("Task manager App");
 });
 
